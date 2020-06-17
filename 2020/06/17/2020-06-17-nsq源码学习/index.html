@@ -64,7 +64,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Go,nsq," />
 
 
 
@@ -75,15 +75,55 @@
 
 
 
-<meta name="description" content="今天应做的事没有做，明天再早也是耽误了">
-<meta property="og:type" content="website">
-<meta property="og:title" content="丛也的blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="整体流程  nsq&#x2F;nsq.gomain 函数入口在其中。其中含有 flag 包用来解析输入。初始化后，开了四个携程 123456789go func() &amp;#123;	&lt;-signalChan	nsqEndChan &lt;- 1&amp;#125;()signal.Notify(signalChan, os.Interrupt) &#x2F;&#x2F; 实时接受输入信号go topicFactory(*memQu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="源码学习 | nsq（v0.1.1版本）">
+<meta property="og:url" content="http://yoursite.com/2020/06/17/2020-06-17-nsq%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0/index.html">
 <meta property="og:site_name" content="丛也的blog">
-<meta property="og:description" content="今天应做的事没有做，明天再早也是耽误了">
+<meta property="og:description" content="整体流程  nsq&#x2F;nsq.gomain 函数入口在其中。其中含有 flag 包用来解析输入。初始化后，开了四个携程 123456789go func() &amp;#123;	&lt;-signalChan	nsqEndChan &lt;- 1&amp;#125;()signal.Notify(signalChan, os.Interrupt) &#x2F;&#x2F; 实时接受输入信号go topicFactory(*memQu">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/795299/1592384074102-543ef476-693c-4c1a-bf94-407960c64678.png#align=left&display=inline&height=409&margin=%5Bobject%20Object%5D&name=image.png&originHeight=409&originWidth=1048&size=77256&status=done&style=none&width=1048">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/795299/1592232893366-ad099692-6a35-4843-87d9-2fc5e5126893.png#align=left&display=inline&height=175&margin=%5Bobject%20Object%5D&name=image.png&originHeight=175&originWidth=782&size=30603&status=done&style=none&width=782">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/795299/1592233035035-13d05928-e7d5-4d60-b514-bc7581fde892.png#align=left&display=inline&height=320&margin=%5Bobject%20Object%5D&name=image.png&originHeight=315&originWidth=735&size=64725&status=done&style=none&width=746">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/795299/1592234471466-58832552-06e8-427d-a867-2cef5012e977.png#align=left&display=inline&height=360&margin=%5Bobject%20Object%5D&name=image.png&originHeight=360&originWidth=931&size=61693&status=done&style=none&width=931">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/795299/1592234757000-c84f39a3-200d-4ec5-b0e8-539e37143f75.png#align=left&display=inline&height=318&margin=%5Bobject%20Object%5D&name=image.png&originHeight=318&originWidth=817&size=56297&status=done&style=none&width=817">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/795299/1592235216376-103ba73e-2a39-4971-be27-f62a9e53bc83.png#align=left&display=inline&height=821&margin=%5Bobject%20Object%5D&name=image.png&originHeight=821&originWidth=1378&size=113843&status=done&style=none&width=1378">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/795299/1592235887956-83493fb5-d6aa-4575-b2f0-594e7f992b70.png#align=left&display=inline&height=195&margin=%5Bobject%20Object%5D&name=image.png&originHeight=195&originWidth=883&size=32486&status=done&style=none&width=883">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/795299/1592281184516-a2d0d2b6-4a30-465b-98f2-1f36003e2b73.png#align=left&display=inline&height=135&margin=%5Bobject%20Object%5D&name=image.png&originHeight=135&originWidth=810&size=20099&status=done&style=none&width=810">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/795299/1592281777427-eed6aa6f-3011-4fe5-b4cf-fbafc72b9766.png#align=left&display=inline&height=618&margin=%5Bobject%20Object%5D&name=image.png&originHeight=618&originWidth=920&size=93732&status=done&style=none&width=920">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/795299/1592287475041-dd9af87d-24ae-43fa-bbcd-84173cb59f01.png#align=left&display=inline&height=467&margin=%5Bobject%20Object%5D&name=image.png&originHeight=467&originWidth=926&size=47587&status=done&style=none&width=926">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/795299/1592287721809-b65466bb-3d88-469c-8d7b-813625904030.png#align=left&display=inline&height=359&margin=%5Bobject%20Object%5D&name=image.png&originHeight=359&originWidth=919&size=47030&status=done&style=none&width=919">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/795299/1592296780598-07c85a42-d45d-4617-917d-733fb78b5602.png#align=left&display=inline&height=96&margin=%5Bobject%20Object%5D&name=image.png&originHeight=96&originWidth=910&size=14112&status=done&style=none&width=910">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/795299/1592297795040-5768c42f-cda4-404c-9a65-96d3d06626b8.png#align=left&display=inline&height=720&margin=%5Bobject%20Object%5D&name=image.png&originHeight=720&originWidth=923&size=113796&status=done&style=none&width=923">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/795299/1592298402021-a402a326-f7bf-4d42-bba6-238ac001887a.png#align=left&display=inline&height=135&margin=%5Bobject%20Object%5D&name=image.png&originHeight=135&originWidth=900&size=13136&status=done&style=none&width=900">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/795299/1592306578289-f8b7d08c-de1a-43e8-9185-e82c6c42c7c7.png#align=left&display=inline&height=95&margin=%5Bobject%20Object%5D&name=image.png&originHeight=95&originWidth=893&size=11468&status=done&style=none&width=893">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/795299/1592312806398-e0e41a18-6f6f-470c-8512-fa75122bbab7.png#align=left&display=inline&height=716&margin=%5Bobject%20Object%5D&name=image.png&originHeight=716&originWidth=906&size=89701&status=done&style=none&width=906">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/795299/1592314002618-a7c400f5-a57a-405d-b123-e4ce55727941.png#align=left&display=inline&height=745&margin=%5Bobject%20Object%5D&name=image.png&originHeight=745&originWidth=882&size=85609&status=done&style=none&width=882">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/795299/1592316011911-ba1488e4-fd3e-4f5a-9d51-583dbcedda52.png#align=left&display=inline&height=580&margin=%5Bobject%20Object%5D&name=image.png&originHeight=580&originWidth=915&size=70388&status=done&style=none&width=915">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/795299/1592316462545-bfd7ce34-32ac-4829-8bb1-8a4a0b46a952.png#align=left&display=inline&height=586&margin=%5Bobject%20Object%5D&name=image.png&originHeight=586&originWidth=1031&size=83400&status=done&style=none&width=1031">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/795299/1592322842800-6a94d6c7-2b71-4643-9156-12834afdcadc.png#align=left&display=inline&height=363&margin=%5Bobject%20Object%5D&name=image.png&originHeight=363&originWidth=964&size=71758&status=done&style=none&width=964">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/795299/1592322915992-eb87c669-15ba-4182-84d2-64b7c14988e8.png#align=left&display=inline&height=376&margin=%5Bobject%20Object%5D&name=image.png&originHeight=376&originWidth=1061&size=71253&status=done&style=none&width=1061">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/795299/1592326301562-af667ed3-feb6-44f2-8d87-f05cc4e9842e.png#align=left&display=inline&height=183&margin=%5Bobject%20Object%5D&name=image.png&originHeight=183&originWidth=823&size=31752&status=done&style=none&width=823">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/795299/1592326559651-6a68530c-c736-4391-b722-d14e409c170f.png#align=left&display=inline&height=131&margin=%5Bobject%20Object%5D&name=image.png&originHeight=131&originWidth=779&size=23264&status=done&style=none&width=779">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/795299/1592326322487-eb52de85-b44f-4862-9cf5-f5b6211d63a0.png#align=left&display=inline&height=120&margin=%5Bobject%20Object%5D&name=image.png&originHeight=120&originWidth=776&size=14912&status=done&style=none&width=776">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/795299/1592326159054-9296bbef-6ffe-46ad-a4b3-75a3937cff7e.png#align=left&display=inline&height=613&margin=%5Bobject%20Object%5D&name=image.png&originHeight=613&originWidth=1015&size=93510&status=done&style=none&width=1015">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/795299/1592326882709-2bd02260-536c-47af-b621-ec9558b2193c.png#align=left&display=inline&height=462&margin=%5Bobject%20Object%5D&name=image.png&originHeight=462&originWidth=935&size=50677&status=done&style=none&width=935">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/795299/1592327161096-f68d8d7f-06d2-4dd1-8c53-b80d9c410201.png#align=left&display=inline&height=599&margin=%5Bobject%20Object%5D&name=image.png&originHeight=599&originWidth=1030&size=83573&status=done&style=none&width=1030">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/795299/1592327263922-271cf7cb-da3a-4cbd-afbf-46c0d675cbd6.png#align=left&display=inline&height=822&margin=%5Bobject%20Object%5D&name=image.png&originHeight=822&originWidth=1020&size=140019&status=done&style=none&width=1020">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/795299/1592327292380-d2c370d2-d050-45ba-8a6f-664ae3ac5b93.png#align=left&display=inline&height=261&margin=%5Bobject%20Object%5D&name=image.png&originHeight=261&originWidth=1028&size=39817&status=done&style=none&width=1028">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/795299/1592327446541-4fac5874-a2ca-4980-8a9a-ea5a24449f85.png#align=left&display=inline&height=298&margin=%5Bobject%20Object%5D&name=image.png&originHeight=298&originWidth=922&size=42058&status=done&style=none&width=922">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/795299/1592327526947-d061a79c-7856-4b00-b0d2-ce0dce4cb66c.png#align=left&display=inline&height=820&margin=%5Bobject%20Object%5D&name=image.png&originHeight=820&originWidth=1031&size=144140&status=done&style=none&width=1031">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/795299/1592327780152-799ad7dd-d14a-43f8-9222-b7d52554bd17.png#align=left&display=inline&height=228&margin=%5Bobject%20Object%5D&name=image.png&originHeight=228&originWidth=807&size=34433&status=done&style=none&width=807">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/795299/1592327981696-5f3b8fe4-cf3f-4866-bbd1-81cb40f1ee67.png#align=left&display=inline&height=106&margin=%5Bobject%20Object%5D&name=image.png&originHeight=106&originWidth=765&size=21039&status=done&style=none&width=765">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/795299/1592327882023-5f3162f7-9871-4548-a026-dcd76969bf61.png#align=left&display=inline&height=94&margin=%5Bobject%20Object%5D&name=image.png&originHeight=94&originWidth=709&size=15151&status=done&style=none&width=709">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/795299/1592328014177-89cb74e9-06a1-464b-9374-c582a6c5f875.png#align=left&display=inline&height=637&margin=%5Bobject%20Object%5D&name=image.png&originHeight=637&originWidth=815&size=70636&status=done&style=none&width=815">
+<meta property="article:published_time" content="2020-06-17T09:05:07.000Z">
+<meta property="article:modified_time" content="2020-06-17T09:07:12.818Z">
 <meta property="article:author" content="丛也">
+<meta property="article:tag" content="Go">
+<meta property="article:tag" content="nsq">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.nlark.com/yuque/0/2020/png/795299/1592384074102-543ef476-693c-4c1a-bf94-407960c64678.png#align=left&display=inline&height=409&margin=%5Bobject%20Object%5D&name=image.png&originHeight=409&originWidth=1048&size=77256&status=done&style=none&width=1048">
 
 
 
@@ -113,13 +153,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/06/17/2020-06-17-nsq源码学习/"/>
 
 
 
 
 
-  <title>丛也的blog</title>
+  <title>源码学习 | nsq（v0.1.1版本） | 丛也的blog</title>
   
 
 
@@ -138,8 +178,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -222,9 +261,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -254,9 +293,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/06/17/2020-06-17-nsq%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0/" itemprop="url">源码学习 | nsq（v0.1.1版本）</a></h1>
+          <h1 class="post-title" itemprop="name headline">源码学习 | nsq（v0.1.1版本）</h1>
         
 
         <div class="post-meta">
@@ -328,9 +365,7 @@
       
 
       
-        
-          
-            <h2 id="整体流程"><a href="#整体流程" class="headerlink" title="整体流程"></a>整体流程</h2><p><a name="hLX4O"></a></p>
+        <h2 id="整体流程"><a href="#整体流程" class="headerlink" title="整体流程"></a>整体流程</h2><p><a name="hLX4O"></a></p>
 <h2 id=""><a href="#" class="headerlink" title=""></a><img src="https://cdn.nlark.com/yuque/0/2020/png/795299/1592384074102-543ef476-693c-4c1a-bf94-407960c64678.png#align=left&display=inline&height=409&margin=%5Bobject%20Object%5D&name=image.png&originHeight=409&originWidth=1048&size=77256&status=done&style=none&width=1048" alt="image.png"></h2><p><a name="zmzIO"></a></p>
 <h2 id="nsq-nsq-go"><a href="#nsq-nsq-go" class="headerlink" title="nsq/nsq.go"></a>nsq/nsq.go</h2><p>main 函数入口在其中。其中含有 flag 包用来解析输入。<br />初始化后，开了四个携程</p>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">go</span> <span class="function"><span class="keyword">func</span><span class="params">()</span></span> &#123;</span><br><span class="line">	&lt;-signalChan</span><br><span class="line">	nsqEndChan &lt;- <span class="number">1</span></span><br><span class="line">&#125;()</span><br><span class="line">signal.Notify(signalChan, os.Interrupt) <span class="comment">// 实时接受输入信号</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">go</span> topicFactory(*memQueueSize)</span><br><span class="line"><span class="keyword">go</span> uuidFactory()</span><br><span class="line"><span class="keyword">go</span> tcpServer(*bindAddress, strconv.Itoa(*tcpPort))</span><br></pre></td></tr></table></figure>
@@ -389,8 +424,6 @@
 <h3 id="putHandler"><a href="#putHandler" class="headerlink" title="putHandler"></a>putHandler</h3><p><img src="https://cdn.nlark.com/yuque/0/2020/png/795299/1592328014177-89cb74e9-06a1-464b-9374-c582a6c5f875.png#align=left&display=inline&height=637&margin=%5Bobject%20Object%5D&name=image.png&originHeight=637&originWidth=815&size=70636&status=done&style=none&width=815" alt="image.png"><br />86-87 获取 topic，将 msg 发送进 topic<br><a name="Hb7SW"></a></p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>所有模块都分析完了，现在把这些模块串起来。<br /><br><br />tcp模块监听链接，每个链接生成一个client，client通过Protocol与channel联系起来。<br />在Protocol中提供，SUB、GET操作，client提供write供Protocol调用<br />在SUB中，提供将client与channel联系起来。<br />在GET中，提供将client从channel中获取订阅的msg，并调用client的write通过tcp发送给订阅者<br /><br><br />每个topic包含多个channel，每个channel对应有一个MessagePump，用于从topic中将msg分发给每个channel。topic中提供GetChannel用于创建和获取channel。<br /><br><br />topic提供一个topicFactory用于创建和获取topic。<br /><br><br />topic提供PutMessage用于发布者发布msg。而在http模块中，提供putHandler，用于发布者发布msg，通过在putHandler中调用PutMessage接口，将msg发布到topic中。<br /><br><br />整个过程就是如此。在这个v0.1.1版本中，最主要的流程都有了。但此版本只是一个单机系统。还不是分布式系统。<br /></p>
 
-          
-        
       
     </div>
     
@@ -405,321 +438,38 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/16/%E9%9A%8F%E8%AE%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="丛也">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="丛也的blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/06/16/%E9%9A%8F%E8%AE%B0/" itemprop="url">随记</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-06-16T23:04:00+08:00">
-                2020-06-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%BF%83%E6%83%85%E5%86%B0%E5%92%96%E5%95%A1/" itemprop="url" rel="index">
-                    <span itemprop="name">心情冰咖啡</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/Go/" rel="tag"># Go</a>
           
-
+            <a href="/tags/nsq/" rel="tag"># nsq</a>
           
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>最近在阅读源码时，发现自己有个问题，因为注释都是英文，而开源源码注释写的真的很优秀通透，所以很想读，但是一读英文注释就跑神，无奈。。英文阅读没到位吗</p>
-<p>所以决定在每日新加的认真护肤时间也加上英语时间，认真打卡！</p>
-<p>我知道世界不会一直围绕着我转，不可能永远青春靓丽，不可能永远活力如20岁，不可能永远随心所欲如大学时光。所以我在尽我所能把大学时光过程以后想想都会笑出声的回忆。</p>
-<p>可是呢，人一旦回忆也就证明自己过得并不那么好，我想让日子越过越好，想不需要回忆支撑。想忙碌我想忙碌的事情。激流勇进。</p>
-<p>但我还是要保持清醒。现在过得好，不代表永远过得好，现在拥有的，都有可能离你远去。不能因为自己年轻，经验少而给自己找借口犯懒。路还长着呢。</p>
-<p>朋克养生就是我了，吃五毛的辣条，擦最贵的 sk-II</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
       
 
       
       
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
       
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/15/2020-06-15-Channel%E6%93%8D%E4%BD%9C%E7%AC%94%E8%AE%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="丛也">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="丛也的blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/06/15/2020-06-15-Channel%E6%93%8D%E4%BD%9C%E7%AC%94%E8%AE%B0/" itemprop="url">Go Channel 笔记</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-06-15T15:19:07+08:00">
-                2020-06-15
-              </time>
+              <a href="/2020/06/16/%E9%9A%8F%E8%AE%B0/" rel="next" title="随记">
+                <i class="fa fa-chevron-left"></i> 随记
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Go/" itemprop="url" rel="index">
-                    <span itemprop="name">Go</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>Channel 在 Go 中可以看做一个管道，通过它并发可以发送数据或接收数据。</p>
-<p>Channel 必须先创建再使用：</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ch := <span class="built_in">make</span>(<span class="keyword">chan</span> <span class="keyword">int</span>)</span><br></pre></td></tr></table></figure>
-
-<p>操作：</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ch &lt;- v <span class="comment">// 发送 v 的值到 Channel ch 中</span></span><br><span class="line">x := &lt;-ch <span class="comment">// 从 Channel ch 中取出值，赋给 x</span></span><br></pre></td></tr></table></figure>
-
-<p>你得控制同一时刻只能有一个协程写 map</p>
-<h3 id="select-语句"><a href="#select-语句" class="headerlink" title="select 语句"></a>select 语句</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">func main() &#123;</span><br><span class="line">    chStr ：&#x3D; make(chan string)</span><br><span class="line">    chInt :&#x3D; make(chan int)</span><br><span class="line">    </span><br><span class="line">    go strWorker(chStr)</span><br><span class="line">    go intWorker(chInt) </span><br><span class="line">    for i:&#x3D; 0; i&lt;2; i++ &#123;</span><br><span class="line">        sekect &#123;</span><br><span class="line">            case &lt;-chStr:</span><br><span class="line">            	fmt.Println(&quot;get value from strWorker&quot;)</span><br><span class="line">            case &lt;-chInt:</span><br><span class="line">            	fmt.Println(&quot;get value from intWorker&quot;)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>若是无缓冲的 channel，必须再开一个协程来处理，否则报错</li>
-<li>协程只写入没有写出，那么该协程可能并没有执行。可以 &lt;-ch 写出，这样写入协程肯定会执行 </li>
-</ul>
-<p>go 反射主要与 interface 相关，只有 interface 才有反射一说</p>
-<p>反射就是用来访问存储在接口变量内部类型、值的一种机制。</p>
-<p>reflect.TypeOf()</p>
-<p>reflect.ValueOf()</p>
-<p>反射后面得专门好好学学补充（因为之前平时也用不到）</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -729,162 +479,11 @@
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/15/My-New-Post/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="丛也">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="丛也的blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/06/15/My-New-Post/" itemprop="url">This is my first blog</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-06-15T10:32:18+08:00">
-                2020-06-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%BF%83%E6%83%85%E5%86%B0%E5%92%96%E5%95%A1/" itemprop="url" rel="index">
-                    <span itemprop="name">心情冰咖啡</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>丛也的私密花园，虚拟丛林深处。</p>
-<p>第一篇博客先不谈技术，随便写写。</p>
-<blockquote>
-<p>收藏每一个快乐的瞬间</p>
-<p>用来回击糟糕的日子</p>
-<p>星河在上</p>
-<p>波光在下</p>
-<p>应是天仙狂醉</p>
-<p>乱把白云揉碎</p>
-</blockquote>
-<p>人就是这样的吧。有时会闷闷不乐，有时会钻牛角尖，胡思乱想地觉得自己很悲哀。有时还会觉得自己心情特别好，无所不能，什么事情都能做。这两种心情出现的概率差不多。时间就是在这样的反反复复当中过去的。</p>
-
-          
-        
+    <div class="post-spread">
       
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
 
 
           </div>
@@ -892,6 +491,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -912,8 +515,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -973,6 +585,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#整体流程"><span class="nav-number">1.</span> <span class="nav-text">整体流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">2.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nsq-nsq-go"><span class="nav-number">3.</span> <span class="nav-text">nsq&#x2F;nsq.go</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nsq-topic-go"><span class="nav-number">4.</span> <span class="nav-text">nsq&#x2F;topic.go</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#GetTopic"><span class="nav-number">4.1.</span> <span class="nav-text">GetTopic</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#topicFactory"><span class="nav-number">4.2.</span> <span class="nav-text">topicFactory</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NewTopic"><span class="nav-number">4.3.</span> <span class="nav-text">NewTopic</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#newChannelChan"><span class="nav-number">4.3.1.</span> <span class="nav-text">newChannelChan</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#incomingMessageChan"><span class="nav-number">4.3.2.</span> <span class="nav-text">incomingMessageChan</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#readSyncChan"><span class="nav-number">4.3.3.</span> <span class="nav-text">readSyncChan</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#exitChan"><span class="nav-number">4.3.4.</span> <span class="nav-text">exitChan</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MessagePump"><span class="nav-number">4.4.</span> <span class="nav-text">MessagePump</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nsq-uuid-go"><span class="nav-number">5.</span> <span class="nav-text">nsq&#x2F;uuid.go</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nsq-tcp-go"><span class="nav-number">6.</span> <span class="nav-text">nsq&#x2F;tcp.go</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nsq-client-go"><span class="nav-number">7.</span> <span class="nav-text">nsq&#x2F;client.go</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nsq-protocol-go"><span class="nav-number">8.</span> <span class="nav-text">nsq&#x2F;protocol.go</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nsq-protocol-v1-go"><span class="nav-number">9.</span> <span class="nav-text">nsq&#x2F;protocol_v1.go</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#IOLoop"><span class="nav-number">9.1.</span> <span class="nav-text">IOLoop</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SUB"><span class="nav-number">9.2.</span> <span class="nav-text">SUB</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Get"><span class="nav-number">9.3.</span> <span class="nav-text">Get</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nsq-channel-go"><span class="nav-number">10.</span> <span class="nav-text">nsq&#x2F;channel.go</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#NewChannel"><span class="nav-number">10.1.</span> <span class="nav-text">NewChannel</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AddClient"><span class="nav-number">10.2.</span> <span class="nav-text">AddClient</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RemoveClient"><span class="nav-number">10.3.</span> <span class="nav-text">RemoveClient</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PutMessage"><span class="nav-number">10.4.</span> <span class="nav-text">PutMessage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GetMessage"><span class="nav-number">10.5.</span> <span class="nav-text">GetMessage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#router"><span class="nav-number">10.6.</span> <span class="nav-text">router</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nsq-http-go"><span class="nav-number">11.</span> <span class="nav-text">nsq&#x2F;http.go</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#httpServer"><span class="nav-number">11.1.</span> <span class="nav-text">httpServer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pingHandler"><span class="nav-number">11.2.</span> <span class="nav-text">pingHandler</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#putHandler"><span class="nav-number">11.3.</span> <span class="nav-text">putHandler</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">12.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1120,6 +748,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
