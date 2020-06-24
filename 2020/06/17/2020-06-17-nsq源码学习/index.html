@@ -82,7 +82,7 @@
 <meta property="og:site_name" content="丛也的blog">
 <meta property="og:description" content="整体流程  nsq&#x2F;nsq.gomain 函数入口在其中。其中含有 flag 包用来解析输入。初始化后，开了四个携程 123456789go func() &amp;#123;	&lt;-signalChan	nsqEndChan &lt;- 1&amp;#125;()signal.Notify(signalChan, os.Interrupt) &#x2F;&#x2F; 实时接受输入信号go topicFactory(*memQu">
 <meta property="og:image" content="http://yoursite.com/2020/06/17/2020-06-17-nsq%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0/06/17/nsq_v1/%E6%80%BB%E8%A7%88.png">
-<meta property="og:image" content="http://yoursite.com/2020/06/17/images/%E6%80%BB%E8%A7%88.png">
+<meta property="og:image" content="http://yoursite.com/images/%E6%80%BB%E8%A7%88.png">
 <meta property="og:image" content="http://yoursite.com/2020/06/17/2020-06-17-nsq%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0/nsq_v1/GetTopic.png">
 <meta property="og:image" content="http://yoursite.com/2020/06/17/2020-06-17-nsq%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0/GetTopic2.png">
 <meta property="og:image" content="http://yoursite.com/2020/06/17/2020-06-17-nsq%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0/topicFactory.png">
@@ -119,7 +119,7 @@
 <meta property="og:image" content="http://yoursite.com/2020/06/17/2020-06-17-nsq%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0/pingHandler.png">
 <meta property="og:image" content="http://yoursite.com/2020/06/17/2020-06-17-nsq%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0/putHandler.png">
 <meta property="article:published_time" content="2020-06-17T09:05:07.000Z">
-<meta property="article:modified_time" content="2020-06-24T04:44:44.299Z">
+<meta property="article:modified_time" content="2020-06-24T04:58:11.082Z">
 <meta property="article:author" content="丛也">
 <meta property="article:tag" content="Go">
 <meta property="article:tag" content="nsq">
@@ -367,7 +367,7 @@
 
       
         <h2 id="整体流程"><a href="#整体流程" class="headerlink" title="整体流程"></a>整体流程</h2><p><img src="/2020/06/17/2020-06-17-nsq%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0/06/17/nsq_v1/%E6%80%BB%E8%A7%88.png" alt="总览.png"></p>
-<p><img src="../images/%E6%80%BB%E8%A7%88.png" alt></p>
+<p><img src="/images/%E6%80%BB%E8%A7%88.png" alt></p>
 <h2 id="nsq-nsq-go"><a href="#nsq-nsq-go" class="headerlink" title="nsq/nsq.go"></a>nsq/nsq.go</h2><p>main 函数入口在其中。其中含有 flag 包用来解析输入。<br>初始化后，开了四个携程</p>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">go</span> <span class="function"><span class="keyword">func</span><span class="params">()</span></span> &#123;</span><br><span class="line">	&lt;-signalChan</span><br><span class="line">	nsqEndChan &lt;- <span class="number">1</span></span><br><span class="line">&#125;()</span><br><span class="line">signal.Notify(signalChan, os.Interrupt) <span class="comment">// 实时接受输入信号</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">go</span> topicFactory(*memQueueSize)</span><br><span class="line"><span class="keyword">go</span> uuidFactory()</span><br><span class="line"><span class="keyword">go</span> tcpServer(*bindAddress, strconv.Itoa(*tcpPort))</span><br></pre></td></tr></table></figure>
 
